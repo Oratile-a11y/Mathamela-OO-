@@ -1,0 +1,30 @@
+import time
+
+class OilTemperatureMonitor:
+    def __init__(self, min_temp, max_temp):
+        self.min_temp = min_temp
+        self.max_temp = max_temp
+        self.current_temp = None
+
+    def set_temperature(self, temp):
+        self.current_temp = temp
+
+    def check_temperature(self):
+        if self.current_temp < self.min_temp:
+            return "Oil temperature is too low. Please heat up."
+        elif self.current_temp > self.max_temp:
+            return "Oil temperature is too high. Please cool down."
+        else:
+            return "Oil temperature is ideal for frying."
+
+def main():
+    monitor = OilTemperatureMonitor(160, 180)  # Ideal temperature range for frying amagwinya
+
+    while True:
+        temp = float(input("Enter current oil temperature (°C): "))
+        monitor.set_temperature(temp)
+        print(monitor.check_temperature())
+        time.sleep(1)  # Check temperature every second
+
+if __name__ == "__main__":
+    main()
