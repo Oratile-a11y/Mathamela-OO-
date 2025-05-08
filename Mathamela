@@ -1,30 +1,37 @@
-import time
+#include <iostream>
+using namespace std;
 
-class OilTemperatureMonitor:
-    def __init__(self, min_temp, max_temp):
-        self.min_temp = min_temp
-        self.max_temp = max_temp
-        self.current_temp = None
+  int main() {
+int temp1, temp2, temp3;
 
-    def set_temperature(self, temp):
-        self.current_temp = temp
+//Step 1:Input three temperature readings
+cout <<"Enter first temperature readings (in °C):"; 
+cin >> temp1;
 
-    def check_temperature(self):
-        if self.current_temp < self.min_temp:
-            return "Oil temperature is too low. Please heat up."
-        elif self.current_temp > self.max_temp:
-            return "Oil temperature is too high. Please cool down."
-        else:
-            return "Oil temperature is ideal for frying."
+cout <<"Enter second temperature readings (in °C):";
+cin >> temp2;
 
-def main():
-    monitor = OilTemperatureMonitor(160, 180)  # Ideal temperature range for frying amagwinya
+//Step 2: check the difference between first and second readings
+int diff = temp2-temp1;
 
-    while True:
-        temp = float(input("Enter current oil temperature (°C): "))
-        monitor.set_temperature(temp)
-        print(monitor.check_temperature())
-        time.sleep(1)  # Check temperature every second
+if diff>50){
 
-if __name__ == "__main__":
-    main()
+cout <<"Reduce fryer heat before taking the third reading."<<endl;
+}else if (diff <10){
+ cout <<"Increase the fryer heat before taking the third reading."endl;
+}
+
+//Step 3: Input third temperature reading
+cout<<"Enter third temperature reading (in °C):",
+cin>>temp3
+
+//Step 4:Check if third reading is in optimal frying range
+if(temp3>=150 && temp3 <=190){
+ cout <<"You may start frying the Magwinya." << endl;
+}else {
+
+cout <<"Oil is not ready for frying!"<<endl;
+{
+
+return 0;
+}
